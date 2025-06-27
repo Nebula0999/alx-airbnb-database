@@ -1,0 +1,1 @@
+created scripts for inserting data into my sql tables
