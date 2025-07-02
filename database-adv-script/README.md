@@ -33,3 +33,19 @@ For each user in the outer query, the subquery counts bookings where user_id mat
 If the count is greater than 3, the user is included in the result.
 
 This is a correlated subquery because the inner query depends on a value (u.id) from the outer query.
+
+## AGGREGATIONS
+
+**Aggregations with COUNT and GROUP BY**
+This query counts how many bookings each user has made.
+
+It uses LEFT JOIN to include users who may have zero bookings.
+
+GROUP BY groups results by user.
+
+**Window function RANK**
+COUNT(*) is used with GROUP BY property_id to total bookings per property.
+
+RANK() OVER (ORDER BY COUNT(*) DESC) assigns a rank based on the number of bookings.
+
+Properties with the same booking count will get the same rank, and the next rank will skip accordingly.
