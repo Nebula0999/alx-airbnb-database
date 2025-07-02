@@ -8,6 +8,11 @@ CREATE INDEX idx_users_email ON users(email);
 -- Index on user_id (used in JOINs and WHERE filters)
 CREATE INDEX idx_bookings_user_id ON bookings(user_id);
 
+EXPLAIN ANALYZE
+SELECT * FROM bookings
+WHERE user_id = 5 AND start_date >= '2025-07-01';
+
+
 -- Index on property_id (frequent JOIN/filter for property info)
 CREATE INDEX idx_bookings_property_id ON bookings(property_id);
 
