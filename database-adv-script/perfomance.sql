@@ -22,6 +22,10 @@ FROM
 JOIN users ON bookings.user_id = users.id
 JOIN properties ON bookings.property_id = properties.id
 JOIN payments ON payments.booking_id = bookings.id;
+WHERE 
+    b.status = 'confirmed' AND
+    b.start_date >= '2025-07-01'
+ORDER BY b.start_date DESC;
 
 EXPLAIN ANALYZE
 SELECT ...
