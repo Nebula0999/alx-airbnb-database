@@ -1,6 +1,6 @@
 ## Database Performance Optimization
 
-This document outlines the performance enhancements implemented in the Airbnb Clone backend database. These optimizations were essential to improve query efficiency, reduce response times, and scale as the dataset grows.
+This document outlines the performance enhancements implemented in the database. These optimizations were essential to improve query efficiency, reduce response times, and scale as the dataset grows.
 
 ---
 
@@ -27,7 +27,7 @@ From the query plans, the following issues were identified:
 
 ### A. Indexing
 
-We created indexes on high-usage columns to speed up JOINs, WHERE conditions, and GROUP BY operations:
+I created indexes on high-usage columns to speed up JOINs, WHERE conditions, and GROUP BY operations:
 
 ```sql
 -- Bookings
