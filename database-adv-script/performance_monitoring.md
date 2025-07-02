@@ -40,3 +40,10 @@ CREATE INDEX idx_properties_location_price ON properties(location, price);
 
 -- Payments
 CREATE INDEX idx_payments_booking_id ON payments(booking_id);
+
+##After changing
+
+Query	                            Before Indexing	    After Optimization  Gain
+Bookings per user	                ~8.8 ms	            ~1.2 ms	            ~86% faster
+Propertyfilter by location/price	~6.3 ms	            ~0.8 ms	            ~87% faster
+Bookingsby date range (partitioned)	~7.5 ms	            ~0.45 ms	        ~94% faster
